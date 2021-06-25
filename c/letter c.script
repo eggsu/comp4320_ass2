@@ -1,0 +1,59 @@
+def unnamed():
+  step_count_c41b2ef7_82ff_44c6_af4f_b211d379a1d8 = 0.0
+  thread Step_Counter_Thread_12f5ae4e_5a72_421c_a21c_7d876aa333ea():
+    while (True):
+      step_count_c41b2ef7_82ff_44c6_af4f_b211d379a1d8 = step_count_c41b2ef7_82ff_44c6_af4f_b211d379a1d8 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_12f5ae4e_5a72_421c_a21c_7d876aa333ea()
+  set_tcp(p[0.0,0.0,0.0,0.0,0.0,0.0])
+  set_target_payload(0.001000, [0.000000, 0.000000, 0.000000], [0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_safety_mode_transition_hardness(1)
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_gravity([0.0, 0.0, 9.82])
+  global Back=p[0.0,0.3,0.0,-1.5707963267948966,-1.3978189091119739E-16,-5.25851784609816E-17]
+  global Lab3=p[-0.6482840384859565,-0.26065262584397864,0.11602475642541743,-0.0060116509110475485,0.006845682792919584,0.014133180119943977]
+  global Plane_1=p[-0.7263375792531429,-0.4193832586871847,0.11893789870564785,-6.932147005099324E-5,-6.37876597349536E-5,-3.0976180707845446E-5]
+  global Plane_3=p[-0.6941315591803631,-0.4226607021127303,0.12025795583917381,-2.3329128148243746E-4,-1.0643321300947277E-5,0.6616717496348955]
+  global Point_1=p[-0.6503671692572522,-0.2738457377398735,0.10493552243528993,-1.8981231837516923,-2.3521751313039405,0.201968949117822]
+  global Side=p[0.3,0.0,0.0,-5.937390976340237E-16,1.5707963267948966,-1.7572917985469221E-16]
+  global Table=p[0.0,0.0,0.0,3.141592653589793,1.9236706937217898E-16,0.0]
+  global drew=p[-0.5133218395381367,-0.31784242679739977,0.1136170967055419,1.641701741975981E-5,1.0555241211704608E-4,1.5707562322632806]
+  global rot=p[-0.7340067659459554,-0.4477861117661736,0.11902149491382073,-2.6258636027915946E-4,-4.090737280969507E-5,1.57350646686733]
+  global Waypoint_1_p=p[-.812546542613, -.185019601947, .098967042080, 2.565095840245, 1.813779470459, -.000015279941]
+  global Waypoint_1_q=[0.06170269846916199, -0.5127380651286622, 0.9666240851031702, -2.0238219700255335, -1.5668233076678675, 0.40505251288414]
+  global ViaPoint_1_p=p[-.786396273596, -.158180494973, .097885443016, -2.564933153956, -1.813516052494, .000670619653]
+  global ViaPoint_1_q=[0.029813308268785477, -0.586981789474823, 1.1220811049090784, -2.105556150475973, -1.566883389149801, 0.37391743063926697]
+  while (True):
+    $ 1 "Robot Program"
+    $ 2 "MoveP"
+    $ 3 "Waypoint_1" "breakAfter"
+    movep(Waypoint_1_p, a=1.2, v=0.25, r=0.018)
+    $ 4 "CircleMove"
+    $ 5 "ViaPoint_1" "noBreak"
+    $ 6 "Waypoint_1" "breakAfter"
+    movec(ViaPoint_1_p, Waypoint_1_p, a=1.2, v=0.25, r=0.018)
+    $ 7 "MoveP"
+    $ 8 "Waypoint_1" "breakAfter"
+    movep(Waypoint_1_p, a=1.2, v=0.25, r=0.018)
+    $ 9 "CircleMove"
+    $ 10 "ViaPoint_1" "noBreak"
+    $ 11 "Waypoint_1" "breakAfter"
+    movec(ViaPoint_1_p, Waypoint_1_p, a=1.2, v=0.25, r=0.0)
+    $ 12 "MoveJ"
+    $ 13 "Waypoint_1" "breakAfter"
+    movej(get_inverse_kin(Waypoint_1_p, qnear=Waypoint_1_q), a=1.3962634015954636, v=1.0471975511965976)
+  end
+end

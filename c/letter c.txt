@@ -1,0 +1,14 @@
+ Program
+   Robot Program
+     MoveP
+       Waypoint_1
+       CircleMove
+         ViaPoint_1
+         Waypoint_1
+     MoveP
+       Waypoint_1
+       CircleMove
+         ViaPoint_1
+         Waypoint_1
+     MoveJ
+       Waypoint_1

@@ -1,0 +1,5 @@
+ Program
+   Robot Program
+     curr_pos≔pose_trans(pose_sub(get_actual_tcp_pose(), letter_start), p[0,0,-1/100,0,0,0])
+     MoveL
+       curr_pos
