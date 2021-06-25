@@ -1,0 +1,185 @@
+ Program
+   Robot Program
+     'Popup: EDLYN LIEW L'
+     LETTERS≔[5,4,12,25,14,27,12,9,5,23,27,12]
+     num_letters≔12
+     counter≔0
+     MoveJ
+       start_corner
+       'start height: 70mm'
+     MoveJ
+       curr_pos≔pose_trans(pose_sub(get_actual_tcp_pose(),letter_start), p[0,0,0,0,0,0])
+       Loop counter<num_letters
+         Switch LETTERS[counter]
+           Case 1
+             'a'
+           Case 2
+             'b'
+           Case 3
+             'c'
+           Case 4
+             'd'
+             Wait: 1.0
+             MoveJ
+               curr_pos≔pose_trans(curr_pos, p[0.65/100,0,0,0,0,0])
+               'Popup'
+               curr_pos
+             MoveL
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[0,2/100,0,0,0,0])
+               'Popup'
+               curr_pos
+               end_circle≔curr_pos
+               'Popup'
+               Call move_up
+               curr_pos≔pose_trans(curr_pos, p[0,-2/100,0,0,0,0])
+               Call move_down
+               'Popup'
+             MoveP
+               curr_pos
+               circle_via≔pose_trans(curr_pos, p[1.35/100,1/100,0,0,0,0])
+               CircleMove
+                 circle_via
+                 end_circle
+             MoveL
+               curr_pos≔end_circle
+               curr_pos
+               Call move_up
+               curr_pos≔pose_trans(curr_pos, p[1.35/100,-2/100,0,0,0,0])
+           Case 5
+             'e'
+             Wait: 1.0
+             MoveL
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[0,2/100,0,0,0,0])
+               curr_pos
+               'Popup'
+               curr_pos≔pose_trans(curr_pos, p[1/100,0,0,0,0,0])
+               curr_pos
+               Call move_up
+               'Popup'
+               curr_pos≔pose_trans( curr_pos,p[-1/100,-2/100,0,0,0,0])
+               'Popup'
+               curr_pos
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[1.1/100,0,0,0,0,0])
+               curr_pos
+               Call move_up
+               curr_pos≔pose_trans(curr_pos,p[-1.1/100,0.9/100,0,0,0,0])
+               curr_pos
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[1/100,0,0,0,0,0])
+               curr_pos
+               Popup
+               Call move_up
+               curr_pos≔pose_trans(curr_pos, p[0.1/100,-0.9/100,0,0,0,0])
+               curr_pos
+               'Popup'
+           Case 6
+             'f'
+           Case 7
+             'g'
+           Case 8
+             'h'
+           Case 9
+             'i'
+           Case 10
+             'j'
+           Case 11
+             'k'
+           Case 12
+             'l'
+             Wait: 1.0
+             MoveL
+               curr_pos≔pose_trans(curr_pos, p[0.7/100,0,0,0,0,0])
+               curr_pos
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[0,2/100,0,0,0,0])
+               curr_pos
+               curr_pos≔pose_trans(curr_pos, p[1/100,0,0,0,0,0])
+               curr_pos
+               Call move_up
+               curr_pos≔pose_trans(curr_pos,p[0.2/100,-2/100,0,0,0,0])
+           Case 13
+             'm'
+           Case 14
+             'n'
+             Wait: 1.0
+             MoveJ
+               curr_pos≔pose_trans(curr_pos, p[0.3/100,0,0,0,0,0])
+               curr_pos
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[0,2/100,0,0,0,0])
+               curr_pos
+               Call move_up
+               curr_pos≔pose_trans(curr_pos, p[0,-2/100,0,0,0,0])
+               curr_pos
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[1.25/100,2/100,0,0,0,0])
+               curr_pos
+               Call move_up
+               curr_pos≔pose_trans(curr_pos, p[0,-2/100,0,0,0,0])
+               curr_pos
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[0,2/100,0,0,0,0])
+               curr_pos
+               Call move_up
+               curr_pos≔pose_trans(curr_pos, p[0.2/100,-2/100,0,0,0,0])
+           Case 15
+             'o'
+           Case 16
+             'p'
+           Case 17
+             'q'
+           Case 18
+             'r'
+           Case 19
+             's'
+           Case 20
+             't'
+           Case 21
+             'u'
+           Case 22
+             'v'
+           Case 23
+             'w'
+           Case 24
+             'x'
+           Case 25
+             'y'
+             Wait: 1.0
+             MoveJ
+               curr_pos≔pose_trans(curr_pos, p[0.3/100,0,0,0,0,0])
+               curr_pos
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[0.8/100,1.3/100,0,0,0,0])
+               curr_pos
+               Call move_up
+               curr_pos≔pose_trans(curr_pos, p[0.8/100,-1.3/100,0,0,0,0])
+               curr_pos
+               Call move_down
+               curr_pos≔pose_trans(curr_pos, p[-0.8/100,1.3/100,0,0,0,0])
+               curr_pos
+               curr_pos≔pose_trans(curr_pos, p[0,0.8/100,0,0,0,0])
+               curr_pos
+               Call move_up
+               curr_pos≔pose_trans(curr_pos, p[1/100,-2/100,0,0,0,0])
+           Case 26
+             'z'
+           Case 27
+             'space'
+             Wait: 1.0
+             curr_pos≔pose_trans(curr_pos, p[2.2/100,0,0,0,0,0])
+         counter≔counter+1
+     MoveJ
+       start_corner
+     Popup: Program completed
+     Control by 192.168.56.1
+   move_up
+     MoveL
+       curr_pos≔pose_add(curr_pos, p[0,0,-1/100,0,0,0])
+       curr_pos
+   move_down
+     MoveL
+       curr_pos≔pose_add(curr_pos, p[0,0,1/100,0,0,0])
+       curr_pos
